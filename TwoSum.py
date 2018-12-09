@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Created on Sun Dec  9 14:30:16 2018
+Created on Sun Dec  9 21:27:24 2018
 
 @author: Administrator
 """
@@ -19,4 +19,4 @@ class Solution:
             else:
                 d[target - nums[i]] = i
                 
-                
+        
