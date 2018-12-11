@@ -59,14 +59,18 @@ def levelOrder(self, root):
         curr = [root]
         next = []
         bt = []
-        while currLevel:
+        while curr:
+        ## 首先对根节点下的子节点进行入列操作
             bt.append(list(x.val for x in curr))
+        ## 遍历该节点下的子节点
             for node in curr:
+        ## 通过一个中间列进行存储节点数据
                 if node.left:
                     next.append(node.left)
                 if node.right:
                     next.append(node.right)
-            curr, next = nextLevel, []
+            curr = next 
+            next = []
         return bt
 
 ```
