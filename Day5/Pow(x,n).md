@@ -61,6 +61,41 @@ n is a 32-bit signed integer, within the range [−231, 231 − 1]
 
 * 注意：为了避免内存溢出导致的超时，采用分治思想，将N分为2/n,2/n（n=even） 
 
+```
+class Solution:
+    def myPow(self, x, n):
+        """
+        :type x: float
+        :type n: int
+        :rtype: float
+        """
+        if n ==0 and n == 1:
+            return 1
+
+        else :
+            return x**n
+            
+ class Solution:
+    def myPow(self, x, n):
+        """
+        :type x: float
+        :type n: int
+        :rtype: float
+        """
+        if n ==0 and n == 1:
+            return 1
+        if not n:
+            return 1
+        if n < 0:
+            return 1.0 / self.myPow(x, -n)
+        if n%2 == 0: 
+            result = self.myPow(x, n / 2)
+            return result * result
+        else: 
+            return x * self.myPow(x, n-1)
+            
+ ```
+
 ![text](https://i.loli.net/2018/12/13/5c1230e567f93.png)
 
 ![text](https://i.loli.net/2018/12/13/5c1230e56aa41.png)
